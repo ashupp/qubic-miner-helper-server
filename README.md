@@ -6,8 +6,13 @@ Qubic miner helper project: https://github.com/ashupp/qubic-miner-helper
 
 **Download latest server:** https://github.com/ashupp/qubic-miner-helper-server/releases/latest  
 
-### Features
+### New Version 1.0.1.0
+- server address is now being saved correctly
+- display of current rank added
+- display of current remaining pool errors added
+- display of helper version of machine added
 
+### Features
 - displays summarized data of connected qubic-miner-helper  
 - may allow additional control and monitoring of qubic-miner-helpers in future
 - like restart workers, observe cpu temperatures...
