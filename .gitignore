@@ -1,0 +1,8 @@
+
+packages/
+
+.vs/
+
+qubic-miner-helper-server/obj/
+
+qubic-miner-helper-server/bin/
