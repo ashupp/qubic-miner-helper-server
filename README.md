@@ -1,4 +1,4 @@
-qubic-miner-helper-server
+# qubic-miner-helper-server
 
 ### Helps to easy run and observe multiple qubic miners
 #### Acts as a server for connected qubic-miner-helper instances
