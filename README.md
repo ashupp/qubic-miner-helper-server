@@ -6,7 +6,7 @@ Qubic miner helper project: https://github.com/ashupp/qubic-miner-helper
 
 **Download latest server:** https://github.com/ashupp/qubic-miner-helper-server/releases/latest  
 
-#### Features
+### Features
 
 - displays summarized data of connected qubic-miner-helper  
 - may allow additional control and monitoring of qubic-miner-helpers in future
