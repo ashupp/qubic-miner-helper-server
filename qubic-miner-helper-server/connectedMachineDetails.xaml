@@ -23,7 +23,9 @@
         <Label Content="Command line:" HorizontalAlignment="Left" Margin="7,66,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.103,-0.588"/>
         <TextBox IsEnabled="False" x:Name="CommandLineTextBox" HorizontalAlignment="Left" Height="23" Margin="106,69,0,0" TextWrapping="Wrap" Text="..." VerticalAlignment="Top" Width="580" Grid.ColumnSpan="2"/>
         <Label Content="Qiner version:" HorizontalAlignment="Left" Margin="9,38,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.103,-0.588"/>
-        <TextBox IsEnabled="False" x:Name="QinerVersionTextBox" HorizontalAlignment="Left" Height="23" Margin="106,41,0,0" TextWrapping="Wrap" Text="..." VerticalAlignment="Top" Width="580" Grid.ColumnSpan="2"/>
+        <TextBox IsEnabled="False" x:Name="QinerVersionTextBox" HorizontalAlignment="Left" Height="23" Margin="106,41,0,0" TextWrapping="Wrap" Text="..." VerticalAlignment="Top" Width="230"/>
+        <Label Content="Helper version:" HorizontalAlignment="Left" Margin="357,38,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.103,-0.588"/>
+        <TextBox IsEnabled="False" x:Name="HelperVersionTextBox" HorizontalAlignment="Left" Height="23" Margin="451,41,0,0" TextWrapping="Wrap" Text="..." VerticalAlignment="Top" Width="235" Grid.ColumnSpan="2"/>
         <!--
         <Button x:Name="RestartWorkerButton" IsEnabled="false" Content="Restart all workers on machine" HorizontalAlignment="Left" Margin="106,219,0,0" VerticalAlignment="Top" Width="176" Click="RestartWorkerButton_Click"/>
         <Label Content="Remote Control:" IsEnabled="False" HorizontalAlignment="Left" Margin="6,216,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.103,-0.588"/>

@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace qubic_miner_helper_server
 {
@@ -12,7 +13,8 @@ namespace qubic_miner_helper_server
         public DateTime currentMachineDateTime;
         public string currentCommandLine;
         public string currentMinerVersion;
+        public string currentHelperVersion;
         public string currentMinerPath;
-        public WorkerState[] currentWorkerStates;
+        public List<WorkerState> currentWorkerStates;
     }
 }

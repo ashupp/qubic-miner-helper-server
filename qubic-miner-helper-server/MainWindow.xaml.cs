@@ -52,6 +52,8 @@ namespace qubic_miner_helper_server
 
             this.errorsFoundOverall = 0;
             this.OverallErrorsFoundTextBox.Text = errorsFoundOverall.ToString();
+            this.CurrentRankTextBox.Text = "waiting for data...";
+            this.PoolErrorsLeftTextBox.Text = "waiting for data...";
             //this.ErrorsFoundLastResetTextBox.Text = errorsLastReset.ToString();
             this.currentConnectedMachines.Clear();
             this.currentConnectedMachinesIp.Clear();
@@ -98,6 +100,23 @@ namespace qubic_miner_helper_server
                 {
                     iterationsCount += connectedMachine.machineCurrentIterationsPerSecond;
                     errorsCount += connectedMachine.machineSessionErrorsFound;
+                    try
+                    {
+                        if (connectedMachine.machineState.currentWorkerStates != null && connectedMachine.machineState.currentWorkerStates.Count > 0)
+                        {
+                            CurrentRankTextBox.Text = connectedMachine.machineState.currentWorkerStates[0].rankText;
+                            PoolErrorsLeftTextBox.Text = connectedMachine.machineState.currentWorkerStates[0].errorsLeftText;
+                        } 
+                        
+                        //errorsLeftText = connectedMachine.machineState.currentWorkerStates[0].rankText;
+                    }
+                    catch (Exception e)
+                    {
+                        CurrentRankTextBox.Text = "Could not load data: " + e.Message;
+                        PoolErrorsLeftTextBox.Text = "Could not load data";
+                    }
+                    
+                    
                 }
 
                 OverallIterationsPerSecondTextBox.Text = iterationsCount.ToString();
@@ -341,6 +360,12 @@ namespace qubic_miner_helper_server
         {
             errorsLastReset = DateTime.Now;
             //ErrorsFoundLastResetTextBox.Text = errorsLastReset.ToString();
+        }
+
+        private void ServerAddressTextBox_OnTextChanged(object sender, TextChangedEventArgs e)
+        {
+            Properties.Settings.Default.serverAddress = ServerAddressTextBox.Text;
+            Properties.Settings.Default.Save();
         }
     }
 }

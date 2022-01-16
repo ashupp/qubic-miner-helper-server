@@ -16,6 +16,7 @@ namespace qubic_miner_helper_server
         public int machineWorkerCount = 0;
         public string machineCommandLine = String.Empty;
         public string machineQinerVersion = String.Empty;
+        public MachineState machineState;
 
         public connectedMachineDetails()
         {
@@ -26,6 +27,7 @@ namespace qubic_miner_helper_server
         public void setData(MachineState receivedMachineState)
         {
             MachineName = receivedMachineState.machineName;
+            machineState = receivedMachineState;
             updateData(receivedMachineState);
         }
 
@@ -38,6 +40,21 @@ namespace qubic_miner_helper_server
             machineQinerVersion = receivedMachineState.currentMinerVersion;
 
             MachineNameTextBox.Text = receivedMachineState.machineName;
+            if (receivedMachineState.currentHelperVersion != String.Empty && receivedMachineState.currentHelperVersion != null)
+            {
+                HelperVersionTextBox.Text = receivedMachineState.currentHelperVersion;
+                HelperVersionTextBox.Background = Brushes.White;
+                HelperVersionTextBox.Foreground = Brushes.Black;
+
+            }
+            else
+            {
+                HelperVersionTextBox.Text = "not found - please update helper";
+                HelperVersionTextBox.Background = Brushes.DarkRed;
+                HelperVersionTextBox.Foreground = Brushes.White;
+            }
+            
+            
             IterationsTextBox.Text = receivedMachineState.overallCurrentIterationsPerSecond.ToString();
             ErrorsFoundTextBox.Text = receivedMachineState.overallSessionErrorsFound.ToString();
             WorkerCountTextBox.Text = receivedMachineState.overallWorkerCount.ToString();

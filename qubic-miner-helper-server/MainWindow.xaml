@@ -13,7 +13,7 @@
                 <Button x:Name="StopServerButton" Content="Stop server" HorizontalAlignment="Left" Margin="459,13,0,0" VerticalAlignment="Top" Width="75" Click="StopServerButton_Click"/>
                 <CheckBox x:Name="AutoStartServerCheckBox" Content="Autostart server" HorizontalAlignment="Left" Margin="256,16,0,0" VerticalAlignment="Top" Checked="AutoStartServerCheckBox_CheckedChanged" Unchecked="AutoStartServerCheckBox_CheckedChanged"/>
                 <Label Content="Server Address:Port:" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top"/>
-                <TextBox x:Name="ServerAddressTextBox" HorizontalAlignment="Left" Height="23" Margin="131,13,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
+                <TextBox x:Name="ServerAddressTextBox" HorizontalAlignment="Left" Height="23" Margin="131,13,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" TextChanged="ServerAddressTextBox_OnTextChanged"/>
                 <Label Content="Status:" HorizontalAlignment="Left" Margin="10,41,0,0" VerticalAlignment="Top"/>
                 <TextBox x:Name="ServerStatusTextBox" IsEnabled="False" HorizontalAlignment="Left" Height="23" Margin="131,41,0,0" TextWrapping="Wrap" Text="stopped" VerticalAlignment="Top" Width="619"/>
             </Grid>
@@ -22,10 +22,14 @@
             <Grid HorizontalAlignment="Left" VerticalAlignment="Top" Margin="0,0,-2,0" Width="762" Height="83">
                 <Label Content="Overall it/s:" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top"/>
                 <Label Content="Machines connected:" HorizontalAlignment="Left" Margin="10,39,0,0" VerticalAlignment="Top"/>
-                <Label Content="Errors found:" HorizontalAlignment="Left" Margin="298,10,0,0" VerticalAlignment="Top"/>
-                <TextBox x:Name="OverallErrorsFoundTextBox" IsEnabled="false" HorizontalAlignment="Left" Height="23" Margin="432,14,0,0" TextWrapping="Wrap" Text="waiting for data..." VerticalAlignment="Top" Width="120" RenderTransformOrigin="0.482,0.823"/>
-                <TextBox x:Name="OverallIterationsPerSecondTextBox" IsEnabled="False" HorizontalAlignment="Left" Height="23" Margin="137,14,0,0" TextWrapping="Wrap" Text="waiting for data..." VerticalAlignment="Top" Width="156"/>
-                <TextBox x:Name="OverallMachinesConnectedCountTextBox" IsEnabled="False" HorizontalAlignment="Left" Height="23" Margin="137,42,0,0" TextWrapping="Wrap" Text="waiting for data..." VerticalAlignment="Top" Width="156"/>
+                <Label Content="Errors found:" HorizontalAlignment="Left" Margin="250,10,0,0" VerticalAlignment="Top"/>
+                <TextBox x:Name="OverallErrorsFoundTextBox" IsEnabled="false" HorizontalAlignment="Left" Height="23" Margin="333,14,0,0" TextWrapping="Wrap" Text="waiting for data..." VerticalAlignment="Top" Width="143" RenderTransformOrigin="0.482,0.823"/>
+                <TextBox x:Name="OverallIterationsPerSecondTextBox" IsEnabled="False" HorizontalAlignment="Left" Height="23" Margin="137,14,0,0" TextWrapping="Wrap" Text="waiting for data..." VerticalAlignment="Top" Width="108"/>
+                <TextBox x:Name="OverallMachinesConnectedCountTextBox" IsEnabled="False" HorizontalAlignment="Left" Height="23" Margin="137,42,0,0" TextWrapping="Wrap" Text="waiting for data..." VerticalAlignment="Top" Width="108"/>
+                <Label Content="Current Rank:" HorizontalAlignment="Left" Margin="250,39,0,0" VerticalAlignment="Top"/>
+                <TextBox x:Name="CurrentRankTextBox" IsEnabled="false" HorizontalAlignment="Left" Height="23" Margin="333,42,0,0" TextWrapping="Wrap" Text="waiting for data..." VerticalAlignment="Top" Width="419" RenderTransformOrigin="0.482,0.823"/>
+                <Label Content="Pool Errors left:" HorizontalAlignment="Left" Margin="481,10,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.23,0.538"/>
+                <TextBox x:Name="PoolErrorsLeftTextBox" IsEnabled="false" HorizontalAlignment="Left" Height="23" Margin="576,14,0,0" TextWrapping="Wrap" Text="waiting for data..." VerticalAlignment="Top" Width="176" RenderTransformOrigin="0.482,0.823"/>
             </Grid>
         </GroupBox>
         <GroupBox Header="Connected machines" Margin="10,227,10,10">
