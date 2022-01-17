@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 using System.Timers;
@@ -37,6 +38,8 @@ namespace qubic_miner_helper_server
         {
             InitializeComponent();
             Init(true);
+
+            Title = Title + " - " + Assembly.GetEntryAssembly().GetName().Version.ToString();
         }
 
         private void Init(bool startup)

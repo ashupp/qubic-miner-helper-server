@@ -27,7 +27,6 @@ namespace qubic_miner_helper_server
         public void setData(MachineState receivedMachineState)
         {
             MachineName = receivedMachineState.machineName;
-            machineState = receivedMachineState;
             updateData(receivedMachineState);
         }
 
@@ -38,6 +37,7 @@ namespace qubic_miner_helper_server
             machineWorkerCount = receivedMachineState.overallWorkerCount;
             machineCommandLine = receivedMachineState.currentCommandLine;
             machineQinerVersion = receivedMachineState.currentMinerVersion;
+            machineState = receivedMachineState;
 
             MachineNameTextBox.Text = receivedMachineState.machineName;
             if (receivedMachineState.currentHelperVersion != String.Empty && receivedMachineState.currentHelperVersion != null)
