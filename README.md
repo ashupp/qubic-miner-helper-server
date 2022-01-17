@@ -12,6 +12,7 @@ Qubic miner helper project: https://github.com/ashupp/qubic-miner-helper
 - display of current rank added
 - display of current remaining pool errors added
 - display of helper version of machine added
+- current server version is now shown in window title
 
 ### Features
 - displays summarized data of connected qubic-miner-helper  
