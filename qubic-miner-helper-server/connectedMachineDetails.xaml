@@ -4,28 +4,30 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:qubic_miner_helper_server"
-             mc:Ignorable="d" Height="228.902" Width="706.358" Margin="0,0,0,3">
-    <Grid HorizontalAlignment="Left" Width="696" Height="225" VerticalAlignment="Top">
+             mc:Ignorable="d" Height="217.902" Width="706.358" Margin="0,0,0,3">
+    <Grid HorizontalAlignment="Left" Width="696" Height="218" VerticalAlignment="Top">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="265*"/>
             <ColumnDefinition Width="6*"/>
         </Grid.ColumnDefinitions>
         <Label Content="Iter/s:" HorizontalAlignment="Left" Margin="7,126,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.103,-0.588"/>
         <Label Content="Machine Name:" HorizontalAlignment="Left" Margin="9,10,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.103,-0.588"/>
-        <Label Content="Errors found:" HorizontalAlignment="Left" Margin="7,155,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.103,-0.588"/>
-        <TextBox IsEnabled="False" x:Name="ErrorsFoundTextBox" HorizontalAlignment="Left" Height="23" Margin="106,157,0,0" TextWrapping="Wrap" Text="..." VerticalAlignment="Top" Width="580" Grid.ColumnSpan="2"/>
-        <TextBox IsEnabled="False" x:Name="MachineNameTextBox" HorizontalAlignment="Left" Height="23" Margin="106,13,0,0" TextWrapping="Wrap" Text="..." VerticalAlignment="Top" Width="580" Grid.ColumnSpan="2"/>
-        <TextBox IsEnabled="False" x:Name="IterationsTextBox" Height="23" Margin="106,126,0,0" TextWrapping="Wrap" Text="..." VerticalAlignment="Top" HorizontalAlignment="Left" Width="580" Grid.ColumnSpan="2"/>
-        <TextBox IsEnabled="False" x:Name="LastUpdateTextBox" HorizontalAlignment="Left" Height="23" Margin="106,185,0,0" TextWrapping="Wrap" Text="..." VerticalAlignment="Top" Width="580" Grid.ColumnSpan="2"/>
-        <Label Content="Updated at:" HorizontalAlignment="Left" Margin="7,185,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.103,-0.588" Width="72"/>
+        <Label Content="Errors found:" HorizontalAlignment="Left" Margin="9,152,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.103,-0.588"/>
+        <TextBox IsReadOnly="True" x:Name="ErrorsFoundTextBox" HorizontalAlignment="Left" Height="23" Margin="106,154,0,0" TextWrapping="Wrap" Text="..." VerticalAlignment="Top" Width="230"/>
+        <TextBox IsReadOnly="True" x:Name="MachineNameTextBox" HorizontalAlignment="Left" Height="23" Margin="106,13,0,0" TextWrapping="Wrap" Text="..." VerticalAlignment="Top" Width="580" Grid.ColumnSpan="2" FontWeight="Bold"/>
+        <TextBox IsReadOnly="True" x:Name="IterationsTextBox" Height="23" Margin="106,126,0,0" TextWrapping="Wrap" Text="..." VerticalAlignment="Top" HorizontalAlignment="Left" Width="580" Grid.ColumnSpan="2"/>
+        <TextBox IsReadOnly="True" x:Name="LastUpdateTextBox" HorizontalAlignment="Left" Height="23" Margin="106,183,0,0" TextWrapping="Wrap" Text="..." VerticalAlignment="Top" Width="580" Grid.ColumnSpan="2"/>
+        <Label Content="Updated at:" HorizontalAlignment="Left" Margin="7,179,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.103,-0.588" Width="72"/>
         <Label Content="Worker count:" HorizontalAlignment="Left" Margin="7,96,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.103,-0.588"/>
-        <TextBox IsEnabled="False" x:Name="WorkerCountTextBox" HorizontalAlignment="Left" Height="23" Margin="106,98,0,0" TextWrapping="Wrap" Text="..." VerticalAlignment="Top" Width="580" Grid.ColumnSpan="2"/>
+        <TextBox IsReadOnly="True" x:Name="WorkerCountTextBox" HorizontalAlignment="Left" Height="23" Margin="106,98,0,0" TextWrapping="Wrap" Text="..." VerticalAlignment="Top" Width="580" Grid.ColumnSpan="2"/>
         <Label Content="Command line:" HorizontalAlignment="Left" Margin="7,66,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.103,-0.588"/>
-        <TextBox IsEnabled="False" x:Name="CommandLineTextBox" HorizontalAlignment="Left" Height="23" Margin="106,69,0,0" TextWrapping="Wrap" Text="..." VerticalAlignment="Top" Width="580" Grid.ColumnSpan="2"/>
+        <TextBox IsReadOnly="True" x:Name="CommandLineTextBox" HorizontalAlignment="Left" Height="23" Margin="106,69,0,0" TextWrapping="Wrap" Text="..." VerticalAlignment="Top" Width="580" Grid.ColumnSpan="2"/>
         <Label Content="Qiner version:" HorizontalAlignment="Left" Margin="9,38,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.103,-0.588"/>
-        <TextBox IsEnabled="False" x:Name="QinerVersionTextBox" HorizontalAlignment="Left" Height="23" Margin="106,41,0,0" TextWrapping="Wrap" Text="..." VerticalAlignment="Top" Width="230"/>
-        <Label Content="Helper version:" HorizontalAlignment="Left" Margin="357,38,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.103,-0.588"/>
-        <TextBox IsEnabled="False" x:Name="HelperVersionTextBox" HorizontalAlignment="Left" Height="23" Margin="451,41,0,0" TextWrapping="Wrap" Text="..." VerticalAlignment="Top" Width="235" Grid.ColumnSpan="2"/>
+        <TextBox IsReadOnly="True" x:Name="QinerVersionTextBox" HorizontalAlignment="Left" Height="23" Margin="106,41,0,0" TextWrapping="Wrap" Text="..." VerticalAlignment="Top" Width="230"/>
+        <Label Content="Helper version:" HorizontalAlignment="Left" Margin="346,39,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.103,-0.588"/>
+        <TextBox IsReadOnly="True" x:Name="HelperVersionTextBox" HorizontalAlignment="Left" Height="23" Margin="476,41,0,0" TextWrapping="Wrap" Text="..." VerticalAlignment="Top" Width="210" Grid.ColumnSpan="2"/>
+        <Label Content="Last Time Error found:" HorizontalAlignment="Left" Margin="346,152,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.103,-0.588" Width="130"/>
+        <TextBox IsReadOnly="True" x:Name="LastTimeErrorFoundTextBox" HorizontalAlignment="Left" Height="23" Margin="476,154,0,0" TextWrapping="Wrap" Text="..." VerticalAlignment="Top" Width="210" Grid.ColumnSpan="2"/>
         <!--
         <Button x:Name="RestartWorkerButton" IsEnabled="false" Content="Restart all workers on machine" HorizontalAlignment="Left" Margin="106,219,0,0" VerticalAlignment="Top" Width="176" Click="RestartWorkerButton_Click"/>
         <Label Content="Remote Control:" IsEnabled="False" HorizontalAlignment="Left" Margin="6,216,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.103,-0.588"/>

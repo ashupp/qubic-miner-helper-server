@@ -45,7 +45,6 @@ namespace qubic_miner_helper_server
                 HelperVersionTextBox.Text = receivedMachineState.currentHelperVersion;
                 HelperVersionTextBox.Background = Brushes.White;
                 HelperVersionTextBox.Foreground = Brushes.Black;
-
             }
             else
             {
@@ -53,16 +52,47 @@ namespace qubic_miner_helper_server
                 HelperVersionTextBox.Background = Brushes.DarkRed;
                 HelperVersionTextBox.Foreground = Brushes.White;
             }
-            
+
+
+            // Enthält der Helper bereits den Wert LastTimeErrorFound?
+            if (!string.IsNullOrEmpty(receivedMachineState.currentHelperVersion))
+            {
+                var currMachineVersion = Version.Parse(receivedMachineState.currentHelperVersion);
+                if (currMachineVersion < new Version(1, 1, 2, 0))
+                {
+                    setLastTimeErrorFoundNotAvailable();
+                }
+                else
+                {
+                    setLastTimeErrorFoundAvailable();
+                    LastTimeErrorFoundTextBox.Text = receivedMachineState.lastErrorReductionByMachineDateTime != default ? receivedMachineState.lastErrorReductionByMachineDateTime.ToString() : "Waiting for next solution...";
+                }
+            }
+            else
+            {
+                setLastTimeErrorFoundNotAvailable();
+            }
+
             
             IterationsTextBox.Text = receivedMachineState.overallCurrentIterationsPerSecond.ToString();
             ErrorsFoundTextBox.Text = receivedMachineState.overallSessionErrorsFound.ToString();
             WorkerCountTextBox.Text = receivedMachineState.overallWorkerCount.ToString();
             CommandLineTextBox.Text = receivedMachineState.currentCommandLine;
             QinerVersionTextBox.Text = receivedMachineState.currentMinerVersion;
+            LastUpdateTextBox.Text = receivedMachineState.currentMachineDateTime.ToString();
+        }
 
-            LastUpdateTextBox.Text = DateTime.Now.ToString();
-            //receivedMachineState.currentMachineDateTime.ToString();
+        private void setLastTimeErrorFoundNotAvailable()
+        {
+            LastTimeErrorFoundTextBox.Text = "not found - please update helper";
+            LastTimeErrorFoundTextBox.Background = Brushes.DarkRed;
+            LastTimeErrorFoundTextBox.Foreground = Brushes.White;
+        }
+
+        private void setLastTimeErrorFoundAvailable()
+        {
+            LastTimeErrorFoundTextBox.Background = Brushes.White;
+            LastTimeErrorFoundTextBox.Foreground = Brushes.Black;
         }
 
         private void RestartWorkerButton_Click(object sender, RoutedEventArgs e)
