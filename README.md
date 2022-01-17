@@ -7,7 +7,7 @@ Qubic miner helper project: https://github.com/ashupp/qubic-miner-helper
 **Download latest server:** https://github.com/ashupp/qubic-miner-helper-server/releases/latest  
 
 ### New Version 1.0.1.0
-- (needs helper version 1.1.1.0 to display new values properly)
+- (at lease one connected helper needs to be on version 1.1.1.0 to display new values properly)
 - server address is now being saved correctly
 - display of current rank added
 - display of current remaining pool errors added
