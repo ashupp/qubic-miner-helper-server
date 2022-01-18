@@ -6,3 +6,7 @@ packages/
 qubic-miner-helper-server/obj/
 
 qubic-miner-helper-server/bin/
+
+installer/setup-cache/
+
+installer/setup-AnyCPU_Release-SetupFiles/

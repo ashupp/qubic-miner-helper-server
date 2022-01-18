@@ -10,12 +10,15 @@ namespace qubic_miner_helper_server
         public float overallSessionErrorsFound;
         public int overallWorkerCount;
         public int overallThreadCount;
+        public int overallRestartTimes;
         public DateTime currentMachineDateTime;
         public DateTime lastErrorReductionByMachineDateTime;
         public string currentCommandLine;
         public string currentMinerVersion;
         public string currentHelperVersion;
         public string currentMinerPath;
+        public string currentCPUTemps;
+        public string currentCPULoads;
         public List<WorkerState> currentWorkerStates;
     }
 }

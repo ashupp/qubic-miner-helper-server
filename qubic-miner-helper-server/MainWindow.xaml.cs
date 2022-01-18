@@ -44,6 +44,8 @@ namespace qubic_miner_helper_server
 
         private void Init(bool startup)
         {
+            UpgradeSettings();
+
             this.ServerAddressTextBox.Text = Properties.Settings.Default.serverAddress;
             this.AutoStartServerCheckBox.IsChecked = Properties.Settings.Default.serverAutoStartOnOpen;
 
@@ -64,7 +66,22 @@ namespace qubic_miner_helper_server
             this.connectedMachinesStackPanel.Children.Clear();
         }
 
-
+        /**
+         * Try upgrade settings from previous version
+         */
+        private void UpgradeSettings()
+        {
+            try
+            {
+                Properties.Settings.Default.Upgrade();
+                Properties.Settings.Default.Save();
+                Properties.Settings.Default.Reload();
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine("Could not upgrade settings: " + e.Message);
+            }
+        }
         private void CollectDataTimer_Elapsed(object sender, System.Timers.ElapsedEventArgs e)
         {
            CollectOverallData();

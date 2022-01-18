@@ -32,6 +32,8 @@ namespace qubic_miner_helper_server
 
         public void updateData(MachineState receivedMachineState)
         {
+            // Todo: Need better general solution for later added fields...
+
             machineCurrentIterationsPerSecond = receivedMachineState.overallCurrentIterationsPerSecond;
             machineSessionErrorsFound = receivedMachineState.overallSessionErrorsFound;
             machineWorkerCount = receivedMachineState.overallWorkerCount;
@@ -80,6 +82,50 @@ namespace qubic_miner_helper_server
             CommandLineTextBox.Text = receivedMachineState.currentCommandLine;
             QinerVersionTextBox.Text = receivedMachineState.currentMinerVersion;
             LastUpdateTextBox.Text = receivedMachineState.currentMachineDateTime.ToString();
+
+
+            // Set CPU TEMPs if available
+            if (receivedMachineState.currentCPUTemps != null)
+            {
+                CurrentCPUTempTextBox.Text = receivedMachineState.currentCPUTemps;
+                CurrentCPUTempTextBox.Background = Brushes.White;
+                CurrentCPUTempTextBox.Foreground = Brushes.Black;
+            }
+            else
+            {
+                CurrentCPUTempTextBox.Text = "not found - please update helper";
+                CurrentCPUTempTextBox.Background = Brushes.DarkRed;
+                CurrentCPUTempTextBox.Foreground = Brushes.White;
+            }
+
+            // Set CPU Loads if available
+            if (receivedMachineState.currentCPULoads != null)
+            {
+                CurrentCPULoadsTextBox.Text = receivedMachineState.currentCPULoads;
+                CurrentCPULoadsTextBox.Background = Brushes.White;
+                CurrentCPULoadsTextBox.Foreground = Brushes.Black;
+            }
+            else
+            {
+                CurrentCPULoadsTextBox.Text = "not found - please update helper";
+                CurrentCPULoadsTextBox.Background = Brushes.DarkRed;
+                CurrentCPULoadsTextBox.Foreground = Brushes.White;
+            }
+
+
+            // Set restartedXTimes if available
+            if (!string.IsNullOrEmpty(receivedMachineState.currentHelperVersion) && (Version.Parse(receivedMachineState.currentHelperVersion) >= new Version(1, 1, 2, 0)))
+            {
+                OverallRestartTimesTextBox.Text = receivedMachineState.overallRestartTimes.ToString();
+                OverallRestartTimesTextBox.Background = Brushes.White;
+                OverallRestartTimesTextBox.Foreground = Brushes.Black;
+            }
+            else
+            {
+                OverallRestartTimesTextBox.Text = "not found - please update helper";
+                OverallRestartTimesTextBox.Background = Brushes.DarkRed;
+                OverallRestartTimesTextBox.Foreground = Brushes.White;
+            }
         }
 
         private void setLastTimeErrorFoundNotAvailable()
