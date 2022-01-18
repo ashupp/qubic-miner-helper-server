@@ -29,4 +29,10 @@ Qubic miner helper project: https://github.com/ashupp/qubic-miner-helper
 - may allow additional control and monitoring of qubic-miner-helpers in future
 - like restart workers, observe cpu temperatures...
 
+### Configuration Hint for ngrok / lan users
+- you can use * instead of a ip address in server field. 
+so instead of 127.0.0.1:6363 or 192.168.1.115:6363 you can use **\*:6363** to bind all local adresses.
+This makes also ngrok work and you can connect remote machines to you ngrok url.
+
+
 ![image](https://user-images.githubusercontent.com/1867828/149851220-eed9be9d-9d71-48ef-80c8-0ca51380af40.png)
