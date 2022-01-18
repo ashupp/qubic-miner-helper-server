@@ -33,7 +33,7 @@ Qubic miner helper project: https://github.com/ashupp/qubic-miner-helper
 - you can use * instead of a ip address in server field. 
 so instead of 127.0.0.1:6363 or 192.168.1.115:6363 you can use **\*:6363** to bind all local adresses.
 This makes also ngrok work and you can connect remote machines to you ngrok url.  
-You need ngrok only if you want to connect public machines to your local run server.
+You need a tool like ngrok only if you want to connect public machines to your local run server.
 
 
 ![image](https://user-images.githubusercontent.com/1867828/149851220-eed9be9d-9d71-48ef-80c8-0ca51380af40.png)
