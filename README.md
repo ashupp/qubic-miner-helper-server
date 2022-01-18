@@ -2,9 +2,9 @@
 
 ### Helps to easy run and observe multiple qubic miners
 #### Acts as a server for connected qubic-miner-helper instances
-Qubic miner helper project: https://github.com/ashupp/qubic-miner-helper
 
 **Download latest server:** https://github.com/ashupp/qubic-miner-helper-server/releases/latest  
+Qubic miner helper project: https://github.com/ashupp/qubic-miner-helper  
 
 ### New Version 1.0.2.0 (18.01.2022)
 - Improved UI by making text boxes readonly instead of disabled. Looks better and you can copy the values.
@@ -32,7 +32,8 @@ Qubic miner helper project: https://github.com/ashupp/qubic-miner-helper
 ### Configuration Hint for ngrok / lan users
 - you can use * instead of a ip address in server field. 
 so instead of 127.0.0.1:6363 or 192.168.1.115:6363 you can use **\*:6363** to bind all local adresses.
-This makes also ngrok work and you can connect remote machines to you ngrok url.
+This makes also ngrok work and you can connect remote machines to you ngrok url.  
+You need ngrok only if you want to connect public machines to your local run server.
 
 
 ![image](https://user-images.githubusercontent.com/1867828/149851220-eed9be9d-9d71-48ef-80c8-0ca51380af40.png)
