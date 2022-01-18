@@ -6,7 +6,17 @@ Qubic miner helper project: https://github.com/ashupp/qubic-miner-helper
 
 **Download latest server:** https://github.com/ashupp/qubic-miner-helper-server/releases/latest  
 
-### New Version 1.0.1.0
+### New Version 1.0.2.0 (18.01.2022)
+- Improved UI by making text boxes readonly instead of disabled. Looks better and you can copy the values.
+- Connected helpers needs at least version 1.1.2.0 to show following new values.  
+(Download: https://github.com/ashupp/qubic-miner-helper/releases/latest)
+- Added display of temperatures and load (needs coretemp running on connected helpers to show values)
+- Added display of last time error/s was found per machine.
+- Added time of last error reduction to data sent to server
+- Added overall restart times to data sent to server
+- Added installer & icon
+
+### Version 1.0.1.0
 - (at least one connected helper needs to be on version 1.1.1.0 to display new values properly)
 - server address is now being saved correctly
 - display of current rank added
@@ -19,4 +29,4 @@ Qubic miner helper project: https://github.com/ashupp/qubic-miner-helper
 - may allow additional control and monitoring of qubic-miner-helpers in future
 - like restart workers, observe cpu temperatures...
 
-![image](https://user-images.githubusercontent.com/1867828/149683309-fdee82cf-b123-4970-b12e-7ffd9ac35938.png)
+![image](https://user-images.githubusercontent.com/1867828/149851220-eed9be9d-9d71-48ef-80c8-0ca51380af40.png)
